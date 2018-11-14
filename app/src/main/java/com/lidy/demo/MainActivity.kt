@@ -1,5 +1,7 @@
 package com.lidy.demo
 
+import android.animation.AnimatorSet
+import android.animation.ObjectAnimator
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
@@ -12,6 +14,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.lidy.demo.animator.AnimatorActivity
 import io.reactivex.Observable
 import io.reactivex.Scheduler
 import io.reactivex.android.plugins.RxAndroidPlugins
@@ -40,9 +43,13 @@ class MainActivity : AppCompatActivity() {
             this.startActivity(intent)
 
 //            setSimple()
+
         }
 
-        customBottomBar.inflateMenu(R.menu.bottom_menu)
+        animator_button.setOnClickListener {
+            val intent = Intent().setClass(this, AnimatorActivity::class.java)
+            this.startActivity(intent)
+        }
     }
 
 

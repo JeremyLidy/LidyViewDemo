@@ -45,6 +45,8 @@ class DrawActivity : AppCompatActivity() {
         tab_layout.setupWithViewPager(view_pager)
     }
 
-    private class PageModel(@LayoutRes var sampleLayoutRes: Int, @StringRes var titleRes: Int, @LayoutRes var practiceLayoutRes: Int)
+    companion object {
+         class PageModel(@LayoutRes var sampleLayoutRes: Int, @StringRes var titleRes: Int, @LayoutRes var practiceLayoutRes: Int)
+    }
 
 }

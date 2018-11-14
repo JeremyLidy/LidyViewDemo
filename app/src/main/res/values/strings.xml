@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">LidyViewDemo</string>
+    <string name="action_settings">Settings</string>
+    <string name="dashboard">仪表盘</string>
+    <string name="drawColor">drawColor()</string>
+    <string name="drawText">drawText</string>
+    <string name="imageText">imageText</string>
+</resources>

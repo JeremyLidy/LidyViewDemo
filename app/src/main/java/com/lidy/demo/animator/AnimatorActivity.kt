@@ -20,9 +20,11 @@ class AnimatorActivity : AppCompatActivity() {
     private val pageModels = mutableListOf<PageModel>()
 
     init {
+        pageModels.add(PageModel(R.layout.multi_touch_layout, "tab 0"))
         pageModels.add(PageModel(R.layout.sample_image_layout, "tab 1"))
         pageModels.add(PageModel(R.layout.animator_circle_view, "tab 2"))
-        pageModels.add(PageModel(R.layout.camera_view_layout, "tab 3"))
+        pageModels.add(PageModel(R.layout.camera_view_layout, "camera"))
+        pageModels.add(PageModel(R.layout.province_view_layout, "province"))
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

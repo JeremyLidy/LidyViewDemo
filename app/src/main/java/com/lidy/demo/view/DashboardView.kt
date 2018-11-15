@@ -14,8 +14,8 @@ import com.lidy.demo.Utils
 class DashboardView(context: Context, attrs: AttributeSet) : View(context, attrs) {
 
 
-    var paint = Paint(Paint.ANTI_ALIAS_FLAG)
-    var dash = Path()
+    private var paint = Paint(Paint.ANTI_ALIAS_FLAG)
+    private var dash = Path()
     private var effect: PathDashPathEffect
     var bounds: RectF
 
@@ -32,9 +32,7 @@ class DashboardView(context: Context, attrs: AttributeSet) : View(context, attrs
     }
 
 
-    override fun onTouchEvent(event: MotionEvent?): Boolean {
-        return super.onTouchEvent(event)
-    }
+
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         super.onSizeChanged(w, h, oldw, oldh)
         bounds = RectF(width / 2 - RADIUS, height / 2 - RADIUS, width / 2 + RADIUS, height / 2 + RADIUS)

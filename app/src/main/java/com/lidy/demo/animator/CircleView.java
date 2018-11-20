@@ -15,7 +15,7 @@ import com.lidy.demo.Utils;
  */
 public class CircleView extends View {
 
-    private  float radius = Utils.INSTANCE.dp2px(50f);
+    private  float radius = Utils.dp2px(50f);
 
     Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
 

@@ -8,6 +8,9 @@ import android.util.AttributeSet
 import android.view.View
 import com.lidy.demo.Utils
 
+/**
+ * 写
+ */
 class CameraAnimationView : View {
 
     internal var paint = Paint(Paint.ANTI_ALIAS_FLAG)
@@ -28,6 +31,7 @@ class CameraAnimationView : View {
         super.onDraw(canvas)
 
         //上半部分
+        // 这个部分需要倒着画
         canvas.save()
         canvas.translate((100 + 600 / 2).toFloat(), (100 + 600 / 2).toFloat())
         canvas.rotate(-20f)

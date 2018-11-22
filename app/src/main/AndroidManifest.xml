@@ -26,6 +26,8 @@
         <activity android:name=".DrawActivity" />
         <activity android:name=".rx.TestSimpleActivity"/>
         <activity android:name=".animator.AnimatorActivity"/>
+        <activity android:name=".viewpage.TwoPageActivity"/>
+        <activity android:name=".example.ExampleActivity"/>
     </application>
 
 </manifest>

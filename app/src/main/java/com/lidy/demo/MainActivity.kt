@@ -15,6 +15,8 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.lidy.demo.animator.AnimatorActivity
+import com.lidy.demo.example.ExampleActivity
+import com.lidy.demo.viewpage.TwoPageActivity
 import io.reactivex.Observable
 import io.reactivex.Scheduler
 import io.reactivex.android.plugins.RxAndroidPlugins
@@ -41,13 +43,15 @@ class MainActivity : AppCompatActivity() {
         dashboard_button.setOnClickListener {
             val intent = Intent().setClass(this, DrawActivity::class.java)
             this.startActivity(intent)
-
-//            setSimple()
-
         }
 
         animator_button.setOnClickListener {
             val intent = Intent().setClass(this, AnimatorActivity::class.java)
+            this.startActivity(intent)
+        }
+
+        float_action_button.setOnClickListener {
+            val intent = Intent().setClass(this, ExampleActivity::class.java)
             this.startActivity(intent)
         }
     }

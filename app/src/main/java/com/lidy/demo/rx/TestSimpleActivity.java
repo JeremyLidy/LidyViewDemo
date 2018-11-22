@@ -32,10 +32,7 @@ public class TestSimpleActivity extends AppCompatActivity {
 
     private void setSimple() {
 
-        /*
-         * 设置全局的线程
-         */
-        RxAndroidPlugins.onMainThreadScheduler(AndroidSchedulers.from(getMainLooper(), true));
+
 
         compositeDisposable.add(Observable.just("你好")
                 .subscribeOn(Schedulers.newThread())

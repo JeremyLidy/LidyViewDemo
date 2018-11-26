@@ -28,6 +28,7 @@
         <activity android:name=".animator.AnimatorActivity"/>
         <activity android:name=".viewpage.TwoPageActivity"/>
         <activity android:name=".example.ExampleActivity"/>
+        <activity android:name=".motion.MotionExampleActivity"/>
     </application>
 
 </manifest>

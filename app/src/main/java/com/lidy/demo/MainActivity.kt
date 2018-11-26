@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.lidy.demo.animator.AnimatorActivity
 import com.lidy.demo.example.ExampleActivity
+import com.lidy.demo.motion.MotionExampleActivity
 import com.lidy.demo.viewpage.TwoPageActivity
 import io.reactivex.Observable
 import io.reactivex.Scheduler
@@ -51,7 +52,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         float_action_button.setOnClickListener {
-            val intent = Intent().setClass(this, ExampleActivity::class.java)
+            val intent = Intent().setClass(this, MotionExampleActivity::class.java)
             this.startActivity(intent)
         }
     }

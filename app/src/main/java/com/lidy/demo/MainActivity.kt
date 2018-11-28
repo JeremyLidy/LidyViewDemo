@@ -1,34 +1,22 @@
 package com.lidy.demo
 
-import android.animation.AnimatorSet
-import android.animation.ObjectAnimator
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
-import android.view.ViewGroup
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
-import androidx.recyclerview.widget.RecyclerView
 import com.lidy.demo.animator.AnimatorActivity
-import com.lidy.demo.example.ExampleActivity
-import com.lidy.demo.motion.MotionExampleActivity
-import com.lidy.demo.viewpage.TwoPageActivity
+import com.lidy.demo.drag.DragActivity
+import com.lidy.demo.viewpage.PageListActivity
 import io.reactivex.Observable
-import io.reactivex.Scheduler
 import io.reactivex.android.plugins.RxAndroidPlugins
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.functions.Consumer
-import io.reactivex.functions.Function
 import io.reactivex.schedulers.Schedulers
 
 import kotlinx.android.synthetic.main.content_main.*
-
 
 
 class MainActivity : AppCompatActivity() {
@@ -52,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         float_action_button.setOnClickListener {
-            val intent = Intent().setClass(this, MotionExampleActivity::class.java)
+            val intent = Intent().setClass(this, PageListActivity::class.java)
             this.startActivity(intent)
         }
     }

@@ -13,6 +13,11 @@ import androidx.core.view.ViewCompat;
 import androidx.customview.widget.ViewDragHelper;
 import androidx.customview.widget.ViewDragHelper.Callback;
 
+/**
+ * 简单的拖拽
+ *
+ * @author lideyou
+ */
 public class DragHelperGridView extends ViewGroup {
 
     private static final int COLUMNS = 2;
@@ -20,26 +25,17 @@ public class DragHelperGridView extends ViewGroup {
 
     private ViewDragHelper dragHelper;
 
-
-    public DragHelperGridView(Context context) {
-        super(context);
-    }
-
     public DragHelperGridView(Context context, AttributeSet attrs) {
         super(context, attrs);
         dragHelper = ViewDragHelper.create(this, new DragCallback());
     }
 
-    public DragHelperGridView(Context context, AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
-    }
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 
-        int specWidth = MeasureSpec.getMode(widthMeasureSpec);
-        int specHeight = MeasureSpec.getMode(heightMeasureSpec);
+        int specWidth = MeasureSpec.getSize(widthMeasureSpec);
+        int specHeight = MeasureSpec.getSize(heightMeasureSpec);
 
         int childWidth = specWidth / COLUMNS;
         int childHeight = specHeight / ROWS;
@@ -47,20 +43,23 @@ public class DragHelperGridView extends ViewGroup {
         measureChildren(MeasureSpec.makeMeasureSpec(childWidth, MeasureSpec.EXACTLY),
                 MeasureSpec.makeMeasureSpec(childHeight, MeasureSpec.EXACTLY));
 
+        setMeasuredDimension(specWidth, specHeight);
+
     }
 
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
 
         int count = getChildCount();
-
-        int left = 0, top = 0, childWidth = getWidth() / COLUMNS, childHeight = getHeight() / ROWS;
-
-        for (int i = 0; i < count; i++) {
-            View view = getChildAt(i);
-            left = i % COLUMNS * childWidth;
-            top = i / COLUMNS * childHeight;
-            view.layout(left, top, childWidth + left, childHeight + top);
+        int childLeft;
+        int childTop;
+        int childWidth = getWidth() / COLUMNS;
+        int childHeight = getHeight() / ROWS;
+        for (int index = 0; index < count; index++) {
+            View child = getChildAt(index);
+            childLeft = index % 2 * childWidth;
+            childTop = index / 2 * childHeight;
+            child.layout(childLeft, childTop, childLeft + childWidth, childTop + childHeight);
         }
 
     }
@@ -85,20 +84,20 @@ public class DragHelperGridView extends ViewGroup {
 
     private class DragCallback extends ViewDragHelper.Callback {
 
-        float capturedLeft;
-        float capturedTop;
+        int capturedLeft;
+        int capturedTop;
 
         @Override
         public boolean tryCaptureView(@NonNull View child, int pointerId) {
+            //是否拖动
             return true;
         }
 
-        @RequiresApi(api = VERSION_CODES.LOLLIPOP)
         @Override
         public void onViewDragStateChanged(int state) {
             if (state == ViewDragHelper.STATE_IDLE) {
                 View capturedView = dragHelper.getCapturedView();
-                if (capturedView != null) {
+                if (capturedView != null && VERSION.SDK_INT >= VERSION_CODES.LOLLIPOP) {
                     capturedView.setElevation(capturedView.getElevation() - 1);
                 }
             }
@@ -106,6 +105,7 @@ public class DragHelperGridView extends ViewGroup {
 
         @Override
         public int clampViewPositionHorizontal(@NonNull View child, int left, int dx) {
+            // 拖动View left
             return left;
         }
 
@@ -118,7 +118,7 @@ public class DragHelperGridView extends ViewGroup {
         @Override
         public void onViewCaptured(@NonNull View capturedChild, int activePointerId) {
             if (VERSION.SDK_INT >= VERSION_CODES.LOLLIPOP) {
-                capturedChild.setElevation(getElevation() - 1);
+                capturedChild.setElevation(getElevation() + 1);
             }
             capturedLeft = capturedChild.getLeft();
             capturedTop = capturedChild.getTop();
@@ -126,7 +126,8 @@ public class DragHelperGridView extends ViewGroup {
 
         @Override
         public void onViewReleased(@NonNull View releasedChild, float xvel, float yvel) {
-            dragHelper.settleCapturedViewAt((int) capturedLeft, (int) capturedTop);
+            // 放手
+            dragHelper.settleCapturedViewAt(capturedLeft, capturedTop);
             postInvalidateOnAnimation();
         }
     }

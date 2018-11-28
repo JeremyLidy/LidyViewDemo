@@ -22,7 +22,6 @@ public class TestSimpleActivity extends AppCompatActivity {
 
     CompositeDisposable compositeDisposable = new CompositeDisposable();
 
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,17 +30,9 @@ public class TestSimpleActivity extends AppCompatActivity {
 
 
     private void setSimple() {
-
-
-
         compositeDisposable.add(Observable.just("你好")
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Consumer<String>() {
-                    @Override
-                    public void accept(String s) {
-                        System.out.println(s);
-                    }
-                }));
+                .subscribe(s -> System.out.println(s)));
     }
 }

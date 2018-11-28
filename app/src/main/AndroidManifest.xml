@@ -29,6 +29,8 @@
         <activity android:name=".viewpage.TwoPageActivity"/>
         <activity android:name=".example.ExampleActivity"/>
         <activity android:name=".motion.MotionExampleActivity"/>
+        <activity android:name=".drag.DragActivity"/>
+        <activity android:name=".viewpage.PageListActivity"/>
     </application>
 
 </manifest>

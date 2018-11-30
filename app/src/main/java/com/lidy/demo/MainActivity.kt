@@ -8,6 +8,7 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.lidy.demo.animator.AnimatorActivity
+import com.lidy.demo.coordinator.CoordinatorActivity
 import com.lidy.demo.drag.DragActivity
 import com.lidy.demo.viewpage.PageListActivity
 import io.reactivex.Observable
@@ -40,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         float_action_button.setOnClickListener {
-            val intent = Intent().setClass(this, PageListActivity::class.java)
+            val intent = Intent().setClass(this, CoordinatorActivity::class.java)
             this.startActivity(intent)
         }
     }

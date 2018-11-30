@@ -31,6 +31,7 @@
         <activity android:name=".motion.MotionExampleActivity"/>
         <activity android:name=".drag.DragActivity"/>
         <activity android:name=".viewpage.PageListActivity"/>
+        <activity android:name=".coordinator.CoordinatorActivity"/>
     </application>
 
 </manifest>

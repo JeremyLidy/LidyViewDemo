@@ -22,7 +22,7 @@ import java.util.List;
 
 /**
  * recyclerView 简单实现 viewPage 功能
- *
+ * 实现 https://github.com/rubensousa/RecyclerViewSnap.git
  * @author lideyou
  */
 public class PageListActivity extends AppCompatActivity {

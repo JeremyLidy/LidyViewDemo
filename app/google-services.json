@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "958681720984",
+    "firebase_url": "https://ldysample.firebaseio.com",
+    "project_id": "ldysample",
+    "storage_bucket": "ldysample.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:958681720984:android:d8c38785445a5bde",
+        "android_client_info": {
+          "package_name": "com.lidy.demo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "958681720984-7j9q8j728dd4vd7vers5vmd3lh1di9ju.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVhLbNh9HFqAem6kWJfv-8YrzDVbD0MUo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -16,6 +16,8 @@ import io.reactivex.functions.Predicate;
 import io.reactivex.internal.operators.single.SingleJust;
 import io.reactivex.schedulers.Schedulers;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import org.reactivestreams.Publisher;
 
 /**
@@ -155,6 +157,14 @@ public class TestSimpleActivity extends AppCompatActivity {
 
             }
         };
+    }
+
+    private void setObserverTask() {
+
+        List<String> lists = new ArrayList<>();
+        lists.add("22");
+        Observable<String> observable = Observable.fromIterable(lists);
+
     }
 
     private void observerTask() {

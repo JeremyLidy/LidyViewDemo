@@ -38,7 +38,6 @@ public class MatrixView extends View {
     public void onDrawForeground(Canvas canvas) {
         super.onDrawForeground(canvas);
 
-
     }
 
     @Override

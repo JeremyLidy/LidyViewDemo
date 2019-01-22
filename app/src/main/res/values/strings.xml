@@ -5,4 +5,7 @@
     <string name="drawColor">drawColor()</string>
     <string name="drawText">drawText</string>
     <string name="imageText">imageText</string>
+
+    <string name="button_start">Start</string>
+    <string name="button_end">End</string>
 </resources>

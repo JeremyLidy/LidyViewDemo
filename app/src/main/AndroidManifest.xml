@@ -32,6 +32,7 @@
         <activity android:name=".drag.DragActivity"/>
         <activity android:name=".viewpage.PageListActivity"/>
         <activity android:name=".coordinator.CoordinatorActivity"/>
+        <activity android:name=".motion.ConstraintLayoutStatesExampleActivity"/>
     </application>
 
 </manifest>

@@ -10,6 +10,7 @@ import androidx.appcompat.widget.Toolbar
 import com.lidy.demo.animator.AnimatorActivity
 import com.lidy.demo.coordinator.CoordinatorActivity
 import com.lidy.demo.drag.DragActivity
+import com.lidy.demo.motion.ConstraintLayoutStatesExampleActivity
 import com.lidy.demo.viewpage.PageListActivity
 import io.reactivex.Observable
 import io.reactivex.android.plugins.RxAndroidPlugins
@@ -23,6 +24,8 @@ import kotlinx.android.synthetic.main.content_main.*
 class MainActivity : AppCompatActivity() {
 
     private var compositeDisposable = CompositeDisposable()
+
+    private var num = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,9 +44,19 @@ class MainActivity : AppCompatActivity() {
         }
 
         float_action_button.setOnClickListener {
-            val intent = Intent().setClass(this, CoordinatorActivity::class.java)
-            this.startActivity(intent)
+            num ++
+            if (num == 4) {
+                num = 0
+            }
+            indicator_view.setCurrent(num)
+//            val intent = Intent().setClass(this, ConstraintLayoutStatesExampleActivity::class.java)
+//            this.startActivity(intent)
+
         }
+    }
+
+    private fun setAnimation() {
+
     }
 
 

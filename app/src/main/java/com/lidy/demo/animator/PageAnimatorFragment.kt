@@ -111,18 +111,18 @@ class PageAnimatorFragment : Fragment() {
      */
     private fun setObjectAnimators2() {
 
-        var bottomFlipHolder = PropertyValuesHolder.ofFloat("bottomFilp", 45f)
-        var flipRotationHolder = PropertyValuesHolder.ofFloat("flipRotation", 270f)
-        var topFlipHolder = PropertyValuesHolder.ofFloat("topFlip", -45f)
+        val bottomFlipHolder = PropertyValuesHolder.ofFloat("bottomFilp", 45f)
+        val flipRotationHolder = PropertyValuesHolder.ofFloat("flipRotation", 270f)
+        val topFlipHolder = PropertyValuesHolder.ofFloat("topFlip", -45f)
 
-        var objectAnimator = ObjectAnimator.ofPropertyValuesHolder(camera_view,bottomFlipHolder,flipRotationHolder,topFlipHolder)
+        val objectAnimator = ObjectAnimator.ofPropertyValuesHolder(camera_view,bottomFlipHolder,flipRotationHolder,topFlipHolder)
         objectAnimator.duration = 1000L
         objectAnimator.start()
 
     }
 
     /**
-     * 修改文件中的 String 属性值
+     * 修改文件中的 String 属性值来改变动画
      */
     private fun setProvinceAnimator() {
         province.clearAnimation()

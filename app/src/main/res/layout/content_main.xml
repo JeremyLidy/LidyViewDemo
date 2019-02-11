@@ -64,11 +64,47 @@
     </com.lidy.demo.layout.TagLayout>
 
 
-    <com.lidy.demo.touch.ScalableImageView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+    <!--<com.lidy.demo.touch.ScalableImageView-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="0dp"-->
+    <!--app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--app:layout_constraintRight_toRightOf="parent"-->
+    <!--app:layout_constraintTop_toTopOf="parent"/>-->
+
+    <com.lidy.demo.animator.SportsView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/float_action_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <!--<com.lidy.demo.view.TradeView-->
+    <!--android:id="@+id/trade_view"-->
+    <!--android:layout_width="140dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginTop="130dp"-->
+    <!--app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--app:layout_constraintTop_toTopOf="parent"/>-->
+    <!---->
+
+    <com.lidy.demo.view.IndicatorView
+        android:id="@+id/indicator_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 

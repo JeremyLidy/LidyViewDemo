@@ -26,8 +26,8 @@ public class ImageTextView extends View {
     private String str = "The goal of CatchUp was simple. I was living in Palo Alto at the time and commuting to the city every day for work, which left me with a lot of time on the train. At the end of the day, I wanted to wind down and catch up on the news and posts of the day. There’s tons of aggregators/readers out there, but I wanted to make something unique and just for me. I didn’t want an RSS reader, nor something that would burden me with keeping meticulous track of all my “unreads” or any of that silliness. At the end of the day, there were several services I like to read (reddit, hacker news, etc). Each has some form of dedicated app, but I didn’t want to deep dive into each just to get a digest. I’d seen some apps that took steps in this direction, but I thought it was a good opportunity to try to do it right and build something for myself.";
 
     {
-        paint.setTextSize(Utils.INSTANCE.dp2px(15));
-        textPaint.setTextSize(Utils.INSTANCE.dp2px(15));
+        paint.setTextSize(Utils.dp2px(15));
+        textPaint.setTextSize(Utils.dp2px(15));
 
     }
 
@@ -44,6 +44,8 @@ public class ImageTextView extends View {
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
 
+
+        // textView 与 imageView 相关的排版
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
             staticLayout = StaticLayout.Builder
                     .obtain(str, 0, str.length(), textPaint, getWidth()).build();

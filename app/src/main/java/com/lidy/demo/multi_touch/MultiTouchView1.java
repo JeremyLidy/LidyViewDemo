@@ -11,13 +11,13 @@ import androidx.annotation.Nullable;
 import com.lidy.demo.Utils;
 
 /**
- *  接力型 多点触控
- *  同一个时刻只有一个 Pointer 起作用，即最新的 Pointer。典型的是 ListView 、RecyclerView
- *  @author lideyou
+ * 接力型 多点触控 同一个时刻只有一个 Pointer 起作用，即最新的 Pointer。典型的是 ListView 、RecyclerView
+ *
+ * @author lideyou
  */
 public class MultiTouchView1 extends View {
 
-    private static final float IMAGE_WIDTH = Utils.INSTANCE.dp2px(100f);
+    private static final float IMAGE_WIDTH = Utils.dp2px(100f);
 
     Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
 
@@ -32,13 +32,12 @@ public class MultiTouchView1 extends View {
             @Nullable AttributeSet attrs) {
         super(context, attrs);
 
-        bitmap = Utils.INSTANCE.getAvatar(getResources(), (int) IMAGE_WIDTH);
+        bitmap = Utils.getAvatar(getResources(), (int) IMAGE_WIDTH);
     }
 
     public MultiTouchView1(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
-
 
 
     @Override
@@ -73,7 +72,9 @@ public class MultiTouchView1 extends View {
 
                 break;
             case MotionEvent.ACTION_POINTER_UP:
-
+                /*
+                    注意接力最新的 Pointer id
+                 */
                 actionIndex = event.getActionIndex();
                 int pointerIndex = event.getPointerId(actionIndex);
                 if (pointerIndex == trackingPointerId) {

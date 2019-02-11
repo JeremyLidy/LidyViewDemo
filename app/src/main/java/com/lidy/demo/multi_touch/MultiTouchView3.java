@@ -31,7 +31,7 @@ public class MultiTouchView3 extends View {
 
     {
         paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(Utils.INSTANCE.dp2px(4));
+        paint.setStrokeWidth(Utils.dp2px(4));
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStrokeJoin(Paint.Join.ROUND);
     }

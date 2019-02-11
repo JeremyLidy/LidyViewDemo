@@ -1,36 +1,31 @@
 package com.lidy.demo
 
-import android.animation.AnimatorSet
-import android.animation.ObjectAnimator
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
-import android.view.ViewGroup
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
-import androidx.recyclerview.widget.RecyclerView
 import com.lidy.demo.animator.AnimatorActivity
+import com.lidy.demo.coordinator.CoordinatorActivity
+import com.lidy.demo.drag.DragActivity
+import com.lidy.demo.motion.ConstraintLayoutStatesExampleActivity
+import com.lidy.demo.viewpage.PageListActivity
 import io.reactivex.Observable
-import io.reactivex.Scheduler
 import io.reactivex.android.plugins.RxAndroidPlugins
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.functions.Consumer
-import io.reactivex.functions.Function
 import io.reactivex.schedulers.Schedulers
 
 import kotlinx.android.synthetic.main.content_main.*
 
 
-
 class MainActivity : AppCompatActivity() {
 
     private var compositeDisposable = CompositeDisposable()
+
+    private var num = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,15 +36,27 @@ class MainActivity : AppCompatActivity() {
         dashboard_button.setOnClickListener {
             val intent = Intent().setClass(this, DrawActivity::class.java)
             this.startActivity(intent)
-
-//            setSimple()
-
         }
 
         animator_button.setOnClickListener {
             val intent = Intent().setClass(this, AnimatorActivity::class.java)
             this.startActivity(intent)
         }
+
+        float_action_button.setOnClickListener {
+            num ++
+            if (num == 4) {
+                num = 0
+            }
+            indicator_view.setCurrent(num)
+//            val intent = Intent().setClass(this, ConstraintLayoutStatesExampleActivity::class.java)
+//            this.startActivity(intent)
+
+        }
+    }
+
+    private fun setAnimation() {
+
     }
 
 

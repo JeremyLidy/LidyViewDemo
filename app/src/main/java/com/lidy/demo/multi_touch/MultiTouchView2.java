@@ -17,7 +17,7 @@ import com.lidy.demo.Utils;
  */
 public class MultiTouchView2 extends View {
 
-    private static final float IMAGE_WIDTH = Utils.INSTANCE.dp2px(160f);
+    private static final float IMAGE_WIDTH = Utils.dp2px(160f);
 
     Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
 
@@ -31,7 +31,7 @@ public class MultiTouchView2 extends View {
             @Nullable AttributeSet attrs) {
         super(context, attrs);
 
-        bitmap = Utils.INSTANCE.getAvatar(getResources(), (int) IMAGE_WIDTH);
+        bitmap = Utils.getAvatar(getResources(), (int) IMAGE_WIDTH);
     }
 
     public MultiTouchView2(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
